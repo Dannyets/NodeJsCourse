@@ -59,7 +59,7 @@ class InMemoryRepository<T extends Entity> {
     private init = (dataFilePath: string) => {
         fs.readFile(dataFilePath, 'utf8', (err, rawData) => {
             if (err) throw err;
-            const parsedData: Entity[] = JSON.parse(rawData);
+            const parsedData: T[] = JSON.parse(rawData);
             this.data = parsedData;
             
             parsedData.forEach(e => {
