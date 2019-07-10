@@ -1,0 +1,1 @@
+export { createDefaultRouter } from './router-factory';
