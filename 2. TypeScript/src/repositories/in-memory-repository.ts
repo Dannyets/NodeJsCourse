@@ -3,8 +3,8 @@ import uuid from 'uuid/v1';
 import fs from 'fs';
 import { Entity } from '../models';
 
-class InMemoryRepository {
-    data: Entity[];
+class InMemoryRepository<T extends Entity> {
+    data: T[];
     idToEntity: any;
     constructor(dataFilePath: string){
         this.data = [];
@@ -20,7 +20,7 @@ class InMemoryRepository {
         return { ...this.idToEntity[id] };
     }
     
-    public add = (entity: Entity) => {
+    public add = (entity: T) => {
         entity.id = uuid();
         
         this.data.push(entity);
@@ -30,7 +30,7 @@ class InMemoryRepository {
         return { ...entity };
     }
     
-    public update = (entity: Entity) => {
+    public update = (entity: T) => {
         const index = this.findEntityIndex(entity.id);
     
         if(index < 0){

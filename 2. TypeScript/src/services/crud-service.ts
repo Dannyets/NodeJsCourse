@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 // import uuid from 'uuid/v1';
 import { InMemoryRepository } from '../repositories';
+import { Entity } from '../models';
 
 // let data : any[];
 // let repostory: InMemoryRepository;
@@ -71,10 +72,10 @@ import { InMemoryRepository } from '../repositories';
 //     tryFindById
 // };
 
-class CrudService {
-    repository: InMemoryRepository;
+class CrudService<T extends Entity> {
+    repository: InMemoryRepository<T>;
     constructor(dataFilePath: string) {
-        this.repository = new InMemoryRepository(dataFilePath);
+        this.repository = new InMemoryRepository<T>(dataFilePath);
     }
 
     public get = (req: Request, res: Response, next: NextFunction) => {
