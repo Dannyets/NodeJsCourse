@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
 import uuid from 'uuid/v1';
 import fs from 'fs';
-import { Entity } from '../models';
+import { Entity, Repository } from '../models';
 
-class InMemoryRepository<T extends Entity> {
+class InMemoryRepository<T extends Entity> implements Repository<T> {
     data: T[];
     idToEntity: any;
     constructor(dataFilePath: string){
@@ -56,7 +56,7 @@ class InMemoryRepository<T extends Entity> {
         return this.idToEntity[id] ? true : false;
     }
 
-    public getFiltered = (filter: (value: T) => any) => {
+    public getFiltered = (filter: (value: T) => unknown) => {
         return this.data.filter(filter);
     }
 
