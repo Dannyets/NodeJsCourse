@@ -8,5 +8,5 @@ export interface Repository<T extends Entity> {
     remove: (id: string) => unknown,
     findEntityIndex: (id: string) => number,
     isExists: (id: string) => boolean,
-    getFiltered: (filter: (value: T) => unknown) => T[]
+    getFiltered: (filter: (value: T) => boolean) => T[]
 }

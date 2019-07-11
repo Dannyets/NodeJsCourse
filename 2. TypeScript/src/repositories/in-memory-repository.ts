@@ -56,7 +56,7 @@ class InMemoryRepository<T extends Entity> implements Repository<T> {
         return this.idToEntity[id] ? true : false;
     }
 
-    public getFiltered = (filter: (value: T) => unknown) => {
+    public getFiltered = (filter: (value: T) => boolean) => {
         return this.data.filter(filter);
     }
 
