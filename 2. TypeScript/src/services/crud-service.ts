@@ -74,8 +74,8 @@ import { Entity } from '../models';
 
 class CrudService<T extends Entity> {
     repository: InMemoryRepository<T>;
-    constructor(dataFilePath: string) {
-        this.repository = new InMemoryRepository<T>(dataFilePath);
+    constructor(repository: InMemoryRepository<T>) {
+        this.repository = repository;
     }
 
     public get = (req: Request, res: Response, next: NextFunction) => {

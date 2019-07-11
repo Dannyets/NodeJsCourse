@@ -56,6 +56,10 @@ class InMemoryRepository<T extends Entity> {
         return this.idToEntity[id] ? true : false;
     }
 
+    public getFiltered = (filter: (value: T) => any) => {
+        return this.data.filter(filter);
+    }
+
     private init = (dataFilePath: string) => {
         fs.readFile(dataFilePath, 'utf8', (err, rawData) => {
             if (err) throw err;

@@ -1,11 +1,12 @@
 import { CrudService, requestValidator } from '../services';
 import express from 'express';
 import { Entity } from '../models';
+import { InMemoryRepository } from '../repositories';
 
 const { validateId } = requestValidator;
 
-function createDefaultRouter<T extends Entity>(dataFilePath: string){
-    const crudService = new CrudService<T>(dataFilePath);
+function createDefaultRouter<T extends Entity>(repository: InMemoryRepository<T>){
+    const crudService = new CrudService<T>(repository);
 
     const router = express.Router();
 
