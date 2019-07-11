@@ -4,47 +4,47 @@ import fs from 'fs';
 import { Entity, Repository } from '../models';
 
 class InMemoryRepository<T extends Entity> implements Repository<T> {
-    data: T[];
-    idToEntity: any;
-    constructor(dataFilePath: string){
+    private data: T[];
+    private idToEntity: any;
+    constructor(dataFilePath: string) {
         this.data = [];
         this.idToEntity = {};
         this.init(dataFilePath);
     }
-    
+
     public get = () => {
         return [ ...this.data ];
     }
-    
+
     public getById = (id: string) => {
         return { ...this.idToEntity[id] };
     }
-    
+
     public add = (entity: T) => {
         entity.id = uuid();
-        
+
         this.data.push(entity);
-    
+
         this.idToEntity[entity.id] = entity;
-    
+
         return { ...entity };
     }
-    
+
     public update = (entity: T) => {
         const index = this.findEntityIndex(entity.id);
-    
-        if(index < 0){
+
+        if (index < 0) {
             return;
         }
-    
+
         this.data[index] = entity;
     }
-    
+
     public remove = (id: string) => {
         const index = this.findEntityIndex(id);
-    
+
         this.data.splice(index, 1);
-    
+
         this.idToEntity[id] = undefined;
     }
 
@@ -65,7 +65,7 @@ class InMemoryRepository<T extends Entity> implements Repository<T> {
             if (err) throw err;
             const parsedData: T[] = JSON.parse(rawData);
             this.data = parsedData;
-            
+
             parsedData.forEach(e => {
                 this.idToEntity[e.id] = e;
             });
