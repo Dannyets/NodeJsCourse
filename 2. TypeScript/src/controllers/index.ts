@@ -1,5 +1,5 @@
-import { router as productRouter } from './product-controller';
-import { router as categoryRouter } from './category-controller';
+import { router as productRouter } from './product.controller';
+import { router as categoryRouter } from './category.controller';
 
 const routes = [
     {

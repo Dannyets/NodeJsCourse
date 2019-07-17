@@ -1,12 +1,12 @@
 import { Entity } from './entity';
 
 export interface Repository<T extends Entity> {
-    get: () => T[];
-    getById: (id: string) => T;
-    add: (entity: T) => T;
-    update: (entity: T) => void;
-    remove: (id: string) => void;
-    findEntityIndex: (id: string) => number;
-    isExists: (id: string) => boolean;
-    getFiltered: (filter: (value: T) => boolean) => T[];
+    get: () => Promise<T[]>;
+    getById: (id: string) => Promise<T>;
+    add: (entity: T) => Promise<T>;
+    update: (entity: T) => Promise<void>;
+    remove: (id: string) => Promise<void>;
+    findEntityIndex: (id: string) => Promise<number>;
+    isExists: (id: string) => Promise<boolean>;
+    getFiltered: (filter: (value: T) => boolean) => Promise<T[]>;
 }

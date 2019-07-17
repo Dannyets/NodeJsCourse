@@ -1,4 +1,3 @@
-import { Request, Response, NextFunction } from 'express';
 import uuid from 'uuid/v1';
 import fs from 'fs';
 import { Entity, Repository } from '../models';
@@ -6,21 +5,22 @@ import { Entity, Repository } from '../models';
 class InMemoryRepository<T extends Entity> implements Repository<T> {
     private data: T[];
     private idToEntity: any;
+
     constructor(dataFilePath: string) {
         this.data = [];
         this.idToEntity = {};
         this.init(dataFilePath);
     }
 
-    public get = () => {
+    public get = async () => {
         return [ ...this.data ];
     }
 
-    public getById = (id: string) => {
+    public getById = async (id: string) => {
         return { ...this.idToEntity[id] };
     }
 
-    public add = (entity: T) => {
+    public add = async (entity: T) => {
         entity.id = uuid();
 
         this.data.push(entity);
@@ -30,8 +30,8 @@ class InMemoryRepository<T extends Entity> implements Repository<T> {
         return { ...entity };
     }
 
-    public update = (entity: T) => {
-        const index = this.findEntityIndex(entity.id);
+    public update = async (entity: T) => {
+        const index = await this.findEntityIndex(entity.id);
 
         if (index < 0) {
             return;
@@ -40,23 +40,23 @@ class InMemoryRepository<T extends Entity> implements Repository<T> {
         this.data[index] = entity;
     }
 
-    public remove = (id: string) => {
-        const index = this.findEntityIndex(id);
+    public remove = async (id: string) => {
+        const index = await this.findEntityIndex(id);
 
         this.data.splice(index, 1);
 
         this.idToEntity[id] = undefined;
     }
 
-    public findEntityIndex = (id: string) => {
+    public findEntityIndex = async (id: string) => {
         return this.data.findIndex(e => e.id === id);
     }
 
-    public isExists = (id: string) => {
+    public isExists = async (id: string) => {
         return this.idToEntity[id] ? true : false;
     }
 
-    public getFiltered = (filter: (value: T) => boolean) => {
+    public getFiltered = async (filter: (value: T) => boolean) => {
         return this.data.filter(filter);
     }
 
