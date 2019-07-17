@@ -3,7 +3,7 @@ import fs from 'fs';
 import { Entity, Repository } from '../models';
 import { delay } from '../utils';
 
-class InMemoryRepository<T extends Entity> implements Repository<T> {
+export class InMemoryRepository<T extends Entity> implements Repository<T> {
     public name: string;
     private data: T[];
     private idToEntity: any;
@@ -17,11 +17,13 @@ class InMemoryRepository<T extends Entity> implements Repository<T> {
 
     public get = async () => {
         await delay(1000);
+
         return [ ...this.data ];
     }
 
     public getById = async (id: string) => {
         await delay(1000);
+
         return { ...this.idToEntity[id] };
     }
 
@@ -87,7 +89,3 @@ class InMemoryRepository<T extends Entity> implements Repository<T> {
         });
     }
 }
-
-export {
-    InMemoryRepository
-};
