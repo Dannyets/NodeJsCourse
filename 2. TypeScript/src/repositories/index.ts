@@ -3,8 +3,8 @@ import { Product, Category } from '../models';
 import { createRepository } from '../factories';
 
 const repositories = {
-    product: createRepository<Product>(InMemoryRepository, `${__dirname}/../data/products.json`),
-    category: createRepository<Category>(InMemoryRepository, `${__dirname}/../data/categories.json`),
+    product: createRepository<Product>(InMemoryRepository, 'product', `${__dirname}/../data/products.json`),
+    category: createRepository<Category>(InMemoryRepository, 'category', `${__dirname}/../data/categories.json`),
 };
 
 export {

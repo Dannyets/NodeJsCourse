@@ -3,10 +3,12 @@ import express from 'express';
 import { Entity, Repository } from '../models';
 import { SchemaLike } from 'joi';
 import { validationMiddleware } from '../middlewares';
+import { Logger } from 'winston';
 
 function createDefaultRouter<T extends Entity>(repository: Repository<T>,
+                                               logger: Logger,
                                                validationSchema?: SchemaLike) {
-    const crudService = new CrudService<T>(repository);
+    const crudService = new CrudService<T>(repository, logger);
 
     const router = express.Router();
 

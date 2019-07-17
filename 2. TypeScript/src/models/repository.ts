@@ -1,6 +1,7 @@
 import { Entity } from './entity';
 
 export interface Repository<T extends Entity> {
+    name: string;
     get: () => Promise<T[]>;
     getById: (id: string) => Promise<T>;
     add: (entity: T) => Promise<T>;

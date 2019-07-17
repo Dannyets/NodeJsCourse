@@ -1,11 +1,15 @@
 import { Request, Response, NextFunction } from 'express';
 import { Entity, Repository } from '../models';
+import { Logger } from 'winston';
 
 class CrudService<T extends Entity> {
-    constructor(private repository: Repository<T>) {
+    constructor(private repository: Repository<T>,
+                private logger: Logger) {
     }
 
     public get = (req: Request, res: Response, next: NextFunction) => {
+        this.logger.info(`Getting all ${this.repository.name} entries.`);
+
         this.repository
             .get()
             .then((data) => {
@@ -16,6 +20,7 @@ class CrudService<T extends Entity> {
 
     public getById = (req: Request, res: Response, next: NextFunction) => {
         const { id } = req.params;
+        this.logger.info(`Getting ${this.repository.name} entry by id ${id}.`);
 
         this.repository
             .getById(id)
@@ -27,6 +32,8 @@ class CrudService<T extends Entity> {
     }
 
     public post = (req: Request, res: Response, next: NextFunction) => {
+        this.logger.info(`Adding new ${this.repository.name} entry.`);
+
         const entry = res.locals.value;
 
         this.repository
@@ -38,6 +45,8 @@ class CrudService<T extends Entity> {
     }
 
     public put = (req: Request, res: Response, next: NextFunction) => {
+        this.logger.info(`Updating ${this.repository.name} entry.`);
+
         const entry = res.locals.value;
 
         this.repository
@@ -50,6 +59,7 @@ class CrudService<T extends Entity> {
 
     public remove = (req: Request, res: Response, next: NextFunction) => {
         const { id } = req.params;
+        this.logger.info(`Deleting ${this.repository.name} entry with id ${id}.`);
 
         this.repository
             .remove(id)
@@ -61,6 +71,7 @@ class CrudService<T extends Entity> {
 
     public tryFindById = (req: Request, res: Response, next: NextFunction) => {
         const { id } = req.params;
+        this.logger.info(`Trying to find ${this.repository.name} entry with id ${id}.`);
 
         this.repository
             .isExists(id)

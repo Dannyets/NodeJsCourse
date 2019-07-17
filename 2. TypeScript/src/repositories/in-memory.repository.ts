@@ -3,12 +3,14 @@ import fs from 'fs';
 import { Entity, Repository } from '../models';
 
 class InMemoryRepository<T extends Entity> implements Repository<T> {
+    public name: string;
     private data: T[];
     private idToEntity: any;
 
-    constructor(dataFilePath: string) {
+    constructor(name: string, dataFilePath: string) {
         this.data = [];
         this.idToEntity = {};
+        this.name = name;
         this.init(dataFilePath);
     }
 

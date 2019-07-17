@@ -2,8 +2,11 @@ import { createDefaultRouter } from '../factories';
 import { Category } from '../models';
 import { repositories } from '../repositories';
 import { categorySchema } from '../validation';
+import { createLogger } from '../utils';
 
-const { router, crudService } = createDefaultRouter<Category>(repositories.category, categorySchema);
+const logger = createLogger('category-controller');
+
+const { router, crudService } = createDefaultRouter<Category>(repositories.category, logger, categorySchema);
 
 router.get('/:id/products', crudService.tryFindById, (req, res) => {
     const { id: categoryId } = req.params;
