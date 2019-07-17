@@ -28,7 +28,6 @@ class CrudService<T extends Entity> {
                 res.status(200).send(entry);
             })
             .catch(next);
-
     }
 
     public post = (req: Request, res: Response, next: NextFunction) => {
