@@ -1,5 +1,5 @@
 export enum ConfigKey {
     ServerPort = 'APP_SERVER_PORT',
-    ShouldAuthenticate = 'SHOULD_AUTHENTICATE',
+    ShouldAuthenticate = 'AUTH',
     AuthClientBaseUrl = 'AUTH_CLIENT_BASE_URL',
 }

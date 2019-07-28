@@ -1,10 +1,9 @@
 import { CrudService } from '../services';
-import express, { RequestHandler } from 'express';
-import { Entity, Repository, ConfigKey } from '../models';
+import express from 'express';
+import { Entity, Repository, UserRole } from '../models';
 import { SchemaLike } from 'joi';
 import { validationMiddleware, securityMiddleware } from '../middlewares';
 import { Logger } from 'winston';
-import { config } from '../utils';
 
 function createDefaultRouter<T extends Entity>(repository: Repository<T>,
                                                logger: Logger,
@@ -21,19 +20,11 @@ function createDefaultRouter<T extends Entity>(repository: Repository<T>,
 
     router.get('/:id', crudService.tryFindById, crudService.getById);
 
-    const securityHandlers: RequestHandler[] = [];
+    router.post('/', securityMiddleware([UserRole.Admin]), crudService.post);
 
-    const shouldAuthenticate = config.get<boolean>(ConfigKey.ShouldAuthenticate);
+    router.put('/:id', securityMiddleware([UserRole.Admin]), crudService.tryFindById, crudService.put);
 
-    if (shouldAuthenticate) {
-        securityHandlers.push(securityMiddleware(['reader']));
-    }
-
-    router.post('/', ...securityHandlers, crudService.post);
-
-    router.put('/:id', ...securityHandlers, crudService.tryFindById, crudService.put);
-
-    router.delete('/:id', ...securityHandlers, crudService.tryFindById, crudService.remove);
+    router.delete('/:id', securityMiddleware([UserRole.Admin]), crudService.tryFindById, crudService.remove);
 
     return {
         crudService,
