@@ -2,11 +2,10 @@ import express, { Request, Response, NextFunction } from 'express';
 import passport from 'passport';
 import jwt from 'jsonwebtoken';
 import { IVerifyOptions } from 'passport-local';
-import { ConfigKey, UserToken, UserRole } from '../models';
+import { ConfigKey, UserRole } from '../models';
 import { config, auth } from '../utils';
 
 const router = express.Router();
-const jwtSecret = config.get(ConfigKey.JwtSecret);
 
 router.post('/login', (req: Request, res: Response, next: NextFunction) => {
     passport.authenticate('local', { session: false }, (err: Error, user: any, info: IVerifyOptions) => {
@@ -21,6 +20,8 @@ router.post('/login', (req: Request, res: Response, next: NextFunction) => {
             if (error) {
                 return res.send(error);
             }
+
+            const jwtSecret = config.get(ConfigKey.JwtSecret) || '';
 
             jwt.sign(user, jwtSecret, (jwtError: Error, token: string) => {
                 if (jwtError) {

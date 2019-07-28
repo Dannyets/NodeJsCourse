@@ -1,4 +1,5 @@
-export { Product } from './product';
-export { Category } from './category';
-export { Entity } from './entity';
-export { Repository } from './repository';
+export * from './product';
+export * from './category';
+export * from './entity';
+export * from './repository';
+export * from './configKey';

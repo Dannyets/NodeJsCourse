@@ -1,13 +1,17 @@
 import axios from 'axios';
+import { config } from '../utils';
+import { ConfigKey } from '../models';
 
 function isAuthenticated(accessibleForRoles: string[], authToken: string) {
-    const config = {
+    const reqConfig = {
         headers: {
             Authorization: authToken,
         },
     };
 
-    return axios.post(`${process.env.AUTH_SERVICE_BASE_URL}/api/auth/access`, accessibleForRoles, config);
+    const baseUrl = config.get(ConfigKey.AuthClientBaseUrl);
+
+    return axios.post(`${baseUrl}/api/auth/access`, accessibleForRoles, reqConfig);
 }
 
 export default {

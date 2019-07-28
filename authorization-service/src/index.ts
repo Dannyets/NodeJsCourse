@@ -1,6 +1,12 @@
-import { app } from './app';
+import dotenv from 'dotenv';
 
-app.set('port', process.env.PORT || 3000);
+dotenv.config();
+
+import { app } from './app';
+import { config } from './utils';
+import { ConfigKey } from './models';
+
+app.set('port', config.get(ConfigKey.ServerPort));
 
 const port = app.get('port');
 
@@ -10,7 +16,7 @@ const server = app.listen(port, () => {
         app.get('port'),
         app.get('env')
     );
-    
+
     console.log('Press CTRL + C to exit.')
 });
 

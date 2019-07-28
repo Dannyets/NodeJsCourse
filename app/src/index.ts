@@ -1,9 +1,12 @@
-import { app } from './app';
+import { ConfigKey } from './models';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-app.set('port', process.env.SERVER_PORT);
+import { app } from './app';
+import { config } from './utils';
+
+app.set('port', config.get<number>(ConfigKey.ServerPort));
 
 const port = app.get('port');
 

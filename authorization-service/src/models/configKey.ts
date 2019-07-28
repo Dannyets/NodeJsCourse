@@ -1,3 +1,4 @@
 export enum ConfigKey {
-    JwtSecret = 'jwt-sign-secret',
+    JwtSecret = 'JWT_SIGN_SECRET',
+    ServerPort = 'AUTH_SERVER_PORT',
 }

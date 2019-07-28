@@ -1,5 +1,5 @@
-function get(key: string): string {
-    return 'your_jwt_secret';
+function get(key: string): string | undefined {
+    return process.env[key];
 }
 
 export default {
