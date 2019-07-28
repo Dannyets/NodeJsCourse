@@ -1,3 +1,6 @@
-export * from './validation.utils';
 export * from './log.utils';
-export * from './general.utils';
+import * as configUtils from './config.utils';
+export * from './passport.utils';
+export * from './authorization.utils';
+
+export const config = configUtils;

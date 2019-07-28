@@ -2,8 +2,8 @@ import { router as authorizationRouter } from './authorization.controller';
 
 const routes = [
     {
-        route: '/api/product',
-        router: authorizationRouter
+        route: '/api/auth',
+        router: authorizationRouter,
     },
 ];
 

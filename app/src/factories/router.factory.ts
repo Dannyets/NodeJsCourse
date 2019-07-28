@@ -2,7 +2,7 @@ import { CrudService } from '../services';
 import express from 'express';
 import { Entity, Repository } from '../models';
 import { SchemaLike } from 'joi';
-import { validationMiddleware } from '../middlewares';
+import { validationMiddleware, securityMiddleware } from '../middlewares';
 import { Logger } from 'winston';
 
 function createDefaultRouter<T extends Entity>(repository: Repository<T>,
@@ -20,11 +20,11 @@ function createDefaultRouter<T extends Entity>(repository: Repository<T>,
 
     router.get('/:id', crudService.tryFindById, crudService.getById);
 
-    router.post('/', crudService.post);
+    router.post('/', securityMiddleware(['admin']), crudService.post);
 
-    router.put('/:id', crudService.tryFindById, crudService.put);
+    router.put('/:id', securityMiddleware(['admin']), crudService.tryFindById, crudService.put);
 
-    router.delete('/:id', crudService.tryFindById, crudService.remove);
+    router.delete('/:id', securityMiddleware(['admin']), crudService.tryFindById, crudService.remove);
 
     return {
         crudService,
