@@ -30,8 +30,6 @@ export function auth(roles: UserRole[]) {
       }
 
       req.login(user, { session: false }, (error) => {
-        console.log(user);
-
         if (error) {
           next(error);
           return;
@@ -41,7 +39,6 @@ export function auth(roles: UserRole[]) {
           return res.sendStatus(401);
         }
 
-        console.log(roles);
         if (roles.length > 0 && !roles.find(r => user.roles.indexOf(r) >= 0)) {
           return res.sendStatus(403);
         }
