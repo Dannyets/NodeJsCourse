@@ -1,10 +1,10 @@
 {
     "compileOnSave": false,
     "include": [
-        "src/**/*"
+        "src/**/*",
     ],
     "exclude": [
-        "node_modules"
+        "node_modules",
     ],
     "compilerOptions": {
         "esModuleInterop": true,
@@ -16,8 +16,9 @@
         "paths": {
             "*": [
                 "node_modules/*",
-                "src/types/*"
-            ]
+                "src/types/*",
+            ],
+            "@components/*": ["components/*"]
         },
         "resolveJsonModule": true,
         "sourceMap": true,

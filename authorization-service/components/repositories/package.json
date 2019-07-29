@@ -1,0 +1,19 @@
+{
+  "name": "@bit/dannyets.infrastructure.repositories",
+  "version": "1.0.5",
+  "homepage": "https://bit.dev/dannyets/infrastructure/repositories",
+  "main": "dist/repositories/index.js",
+  "dependencies": {
+    "uuid": "^3.3.2",
+    "@bit/dannyets.infrastructure.models": "file:../models",
+    "@bit/dannyets.infrastructure.utils": "file:../utils"
+  },
+  "devDependencies": {},
+  "peerDependencies": {},
+  "license": "SEE LICENSE IN LICENSE",
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/typescript@3.0.5"
+    }
+  }
+}

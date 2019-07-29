@@ -3,12 +3,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import { app } from './app';
-import { config } from './utils';
+import { configUtils } from '@components/utils';
 import { ConfigKey } from './models';
 
-app.set('port', config.get(ConfigKey.ServerPort));
+const port = configUtils.get<number>(ConfigKey.ServerPort);
 
-const port = app.get('port');
+app.set('port', port);
 
 const server = app.listen(port, () => {
     console.log(

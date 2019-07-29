@@ -1,6 +1,7 @@
 import passport from 'passport';
-import { UserRole, UserToken } from '../models';
+import { UserToken } from '../models';
 import { Request, Response, NextFunction } from 'express';
+import { UserRole } from '@components/models';
 
 export function authenticate(callback?: (...args: any[]) => any) {
   return passport.authenticate('jwt', { session: false }, callback);
