@@ -14,6 +14,6 @@ function getOrThrow<T>(value: any, schema: joi.SchemaLike, next?: NextFunction):
   return v;
 }
 
-export {
-  getOrThrow
+export default {
+  getOrThrow,
 };

@@ -138,6 +138,14 @@
   {
     "id": {
       "scope": "dannyets.infrastructure",
+      "name": "utils"
+    },
+    "isSymlink": false,
+    "hash": "a7836b14c253b864656a9245fc43c70879e3dcc0"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
       "name": "clients"
     },
     "isSymlink": false,
@@ -158,14 +166,6 @@
     },
     "isSymlink": false,
     "hash": "2f41a0cb949fc35b95db34f0a7b4e69e00929398"
-  },
-  {
-    "id": {
-      "scope": "dannyets.infrastructure",
-      "name": "utils"
-    },
-    "isSymlink": false,
-    "hash": "a7836b14c253b864656a9245fc43c70879e3dcc0"
   },
   {
     "id": {
