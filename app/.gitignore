@@ -53,3 +53,6 @@ dist/**/*
 .vscode/*
 !.vscode/launch.json
 .idea/*
+
+#Bit
+.bit/*
