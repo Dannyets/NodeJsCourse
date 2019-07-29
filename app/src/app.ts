@@ -4,6 +4,7 @@ import { routes } from './controllers';
 import expressWinston from 'express-winston';
 import { logMiddleware, joiErrorHandlerMiddleware } from '@common/middlewares';
 import { logUtils } from '@common/utils';
+import { Route } from '@common/models';
 
 const app = express();
 
@@ -16,7 +17,7 @@ app.use(expressWinston.logger(logUtils.createLoggerOptions()));
 app.use(logMiddleware);
 app.use(joiErrorHandlerMiddleware);
 
-routes.forEach(({ router, route }) => app.use(route, router));
+routes.forEach(({ router, route }: Route) => app.use(route, router));
 
 app.use(expressWinston.errorLogger(logUtils.createLoggerOptions()));
 

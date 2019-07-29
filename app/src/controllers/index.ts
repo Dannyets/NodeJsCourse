@@ -1,7 +1,8 @@
 import { router as productRouter } from './product.controller';
 import { router as categoryRouter } from './category.controller';
+import { Route } from '@common/models';
 
-const routes = [
+const routes: Route[] = [
     {
         route: '/api/product',
         router: productRouter,
