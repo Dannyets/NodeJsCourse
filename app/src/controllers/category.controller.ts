@@ -1,7 +1,7 @@
 import { Category } from '../models';
 import { categoryRepository, productRepository } from '../repositories';
 import { categorySchema } from '../validation';
-import { createLogger, createDefaultRouter } from '../common';
+import { createDefaultRouter, createLogger } from '@common/factories';
 
 const logger = createLogger('category-controller');
 

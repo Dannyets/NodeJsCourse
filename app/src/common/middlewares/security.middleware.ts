@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction } from 'express';
-import { authClient } from '../clients';
-import { config } from '../utils';
-import { ConfigKey } from '../models';
+import { authClient } from '@common/clients';
+import { configUtils } from '@common/utils';
+import { ConfigKey } from '@common/models';
 
 export const securityMiddleware = (accessibleForRoles: string[]) =>
                                   (req: Request, res: Response, next: NextFunction) => {
-    const shouldAuthenticate = config.get<boolean>(ConfigKey.ShouldAuthenticate);
+    const shouldAuthenticate = configUtils.get<boolean>(ConfigKey.ShouldAuthenticate);
 
     if (!shouldAuthenticate) {
         next();

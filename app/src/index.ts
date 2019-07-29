@@ -1,12 +1,13 @@
-import { ConfigKey } from './common';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 import { app } from './app';
-import { config } from './common/utils';
 
-app.set('port', config.get<number>(ConfigKey.ServerPort));
+import { ConfigKey } from '@common/models';
+import { configUtils } from '@common/utils';
+
+app.set('port', configUtils.get<number>(ConfigKey.ServerPort));
 
 const port = app.get('port');
 

@@ -1,5 +1,5 @@
-import { Entity, Repository } from '../models';
-import { createClass } from './class.factory';
+import { Entity, Repository } from '@common/models';
+import { createClass } from '@common/factories';
 
 function createRepository<T extends Entity>(type: (new (...args: any[]) => Repository<T>),
                                             ...args: any[]): Repository<T> {

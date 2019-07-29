@@ -1,4 +1,4 @@
-import { Entity } from '../common';
+import { Entity } from '@common/models';
 
 export interface Product extends Entity {
     categoryId: string;

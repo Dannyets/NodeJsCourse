@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { Entity, Repository } from '../models';
+import { Entity, Repository } from '@common/models';
 import { Logger } from 'winston';
 
 class CrudService<T extends Entity> {

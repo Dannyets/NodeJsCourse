@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { config } from '../utils';
-import { ConfigKey } from '../models';
+import { configUtils } from '@common/utils';
+import { ConfigKey } from '@common/models';
 
 function isAuthenticated(accessibleForRoles: string[], authToken: string) {
     const reqConfig = {
@@ -9,7 +9,7 @@ function isAuthenticated(accessibleForRoles: string[], authToken: string) {
         },
     };
 
-    const baseUrl = config.get(ConfigKey.AuthClientBaseUrl);
+    const baseUrl = configUtils.get(ConfigKey.AuthClientBaseUrl);
 
     return axios.post(`${baseUrl}/api/auth/access`, accessibleForRoles, reqConfig);
 }

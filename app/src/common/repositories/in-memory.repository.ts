@@ -1,7 +1,7 @@
 import uuid from 'uuid/v1';
 import fs from 'fs';
-import { Entity, Repository } from '../models';
-import { delay } from '../utils';
+import { Entity, Repository } from '@common/models';
+import { generalUtils } from '@common/utils';
 
 export class InMemoryRepository<T extends Entity> implements Repository<T> {
     public name: string;
@@ -16,19 +16,19 @@ export class InMemoryRepository<T extends Entity> implements Repository<T> {
     }
 
     public get = async () => {
-        await delay(1000);
+        await generalUtils.delay(1000);
 
         return [ ...this.data ];
     }
 
     public getById = async (id: string) => {
-        await delay(1000);
+        await generalUtils.delay(1000);
 
         return { ...this.idToEntity[id] };
     }
 
     public add = async (entity: T) => {
-        await delay(1000);
+        await generalUtils.delay(1000);
 
         entity.id = uuid();
 
@@ -40,7 +40,7 @@ export class InMemoryRepository<T extends Entity> implements Repository<T> {
     }
 
     public update = async (entity: T) => {
-        await delay(1000);
+        await generalUtils.delay(1000);
 
         const index = await this.findEntityIndex(entity.id);
 
@@ -52,7 +52,7 @@ export class InMemoryRepository<T extends Entity> implements Repository<T> {
     }
 
     public remove = async (id: string) => {
-        await delay(1000);
+        await generalUtils.delay(1000);
 
         const index = await this.findEntityIndex(id);
 
@@ -66,13 +66,13 @@ export class InMemoryRepository<T extends Entity> implements Repository<T> {
     }
 
     public isExists = async (id: string) => {
-        await delay(1000);
+        await generalUtils.delay(1000);
 
         return this.idToEntity[id] ? true : false;
     }
 
     public getFiltered = async (filter: (value: T) => boolean) => {
-        await delay(1000);
+        await generalUtils.delay(1000);
 
         return this.data.filter(filter);
     }

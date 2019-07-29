@@ -65,6 +65,62 @@
   },
   {
     "id": {
+      "scope": "bit.envs",
+      "name": "compilers/babel"
+    },
+    "isSymlink": false,
+    "hash": "ac130f5e67d6ac0482ae46fde1a4805ef4d8c149"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "internal/get-babel-options"
+    },
+    "isSymlink": false,
+    "hash": "d4771e232e52a7a9ef391bf363d523bc932b014d"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "internal/babel-base-compiler"
+    },
+    "isSymlink": false,
+    "hash": "98f497a5e1cba818d2d5da02020ed566a572b936"
+  },
+  {
+    "id": {
+      "scope": "bit.utils",
+      "name": "object/has-own-property"
+    },
+    "isSymlink": false,
+    "hash": "68b489f0ac79f13787c77dc1fd6a7beb18a7b6ba"
+  },
+  {
+    "id": {
+      "scope": "bit.utils",
+      "name": "object/group-by"
+    },
+    "isSymlink": false,
+    "hash": "9155f60c15a0d4c1c0301f15ef2a09a99687ca77"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "compilers/typescript"
+    },
+    "isSymlink": false,
+    "hash": "befd9e3f4fa0c82a53857ef8bdea434291b1ac27"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "internal/typescript-base-compiler"
+    },
+    "isSymlink": false,
+    "hash": "25c34dd9324192d4c48ac4434881acb7662f9d72"
+  },
+  {
+    "id": {
       "scope": "dannyets.infrastructure",
       "name": "models"
     },

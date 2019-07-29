@@ -1,12 +1,6 @@
 import winston from 'winston';
 
-export function createLogger(name: string) {
-  const options = createLoggerOptions(name);
-
-  return winston.createLogger(options);
-}
-
-export function createLoggerOptions(name?: string) {
+function createLoggerOptions(name?: string) {
   const options = {
     transports: [
       new winston.transports.Console(),
@@ -26,7 +20,7 @@ export function createLoggerOptions(name?: string) {
   return options;
 }
 
-export const alignedWithColorsAndTime = winston.format.combine(
+const alignedWithColorsAndTime = winston.format.combine(
   winston.format.colorize(),
   winston.format.timestamp(),
   winston.format.align(),
@@ -37,3 +31,8 @@ export const alignedWithColorsAndTime = winston.format.combine(
     return `${ts} [${level}]: ${message} ${Object.keys(args).length ? JSON.stringify(args, null, 2) : ''}`;
   }),
 );
+
+export default {
+  createLoggerOptions,
+  alignedWithColorsAndTime,
+};

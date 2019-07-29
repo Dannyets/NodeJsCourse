@@ -1,4 +1,5 @@
-import { createRepository, InMemoryRepository } from '../common';
+import { InMemoryRepository } from '@common/repositories';
+import { createRepository } from '@common/factories';
 import { Category } from '../models';
 
 const categoryRepository = createRepository<Category>(

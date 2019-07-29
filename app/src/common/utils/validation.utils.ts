@@ -1,7 +1,7 @@
 import joi from 'joi';
 import { NextFunction } from 'express';
 
-export function getOrThrow<T>(value: any, schema: joi.SchemaLike, next?: NextFunction): T {
+function getOrThrow<T>(value: any, schema: joi.SchemaLike, next?: NextFunction): T {
   const {error, value: v} = joi.validate(value, schema);
   if (error) {
     if (next) {
@@ -13,3 +13,7 @@ export function getOrThrow<T>(value: any, schema: joi.SchemaLike, next?: NextFun
 
   return v;
 }
+
+export {
+  getOrThrow
+};

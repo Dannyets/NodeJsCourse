@@ -16,8 +16,9 @@
         "paths": {
             "*": [
                 "node_modules/*",
-                "src/types/*"
-            ]
+                "src/types/*",
+            ],
+            "@common/*": [ "src/common/*" ]
         },
         "resolveJsonModule": true,
         "sourceMap": true,
