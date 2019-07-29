@@ -1,5 +1,5 @@
-import { Entity } from './entity';
+import { Entity } from '../common';
 
 export interface Category extends Entity {
-    name: string
+    name: string;
 };

@@ -4,12 +4,12 @@ import { router as categoryRouter } from './category.controller';
 const routes = [
     {
         route: '/api/product',
-        router: productRouter
+        router: productRouter,
     },
     {
         route: '/api/category',
-        router: categoryRouter
-    }
+        router: categoryRouter,
+    },
 ];
 
 export {

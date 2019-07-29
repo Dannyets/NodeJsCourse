@@ -1,7 +1,7 @@
-import { Entity } from './entity';
+import { Entity } from '../common';
 
 export interface Product extends Entity {
-    categoryId: string,
-    name: string,
-    itemsInStock: number
-};
+    categoryId: string;
+    name: string;
+    itemsInStock: number;
+}

@@ -1,10 +1,10 @@
-import { ConfigKey } from './models';
+import { ConfigKey } from './common';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
 import { app } from './app';
-import { config } from './utils';
+import { config } from './common/utils';
 
 app.set('port', config.get<number>(ConfigKey.ServerPort));
 

@@ -1,9 +1,9 @@
-import { CrudService } from '../services';
 import express from 'express';
-import { Entity, Repository, UserRole } from '../models';
 import { SchemaLike } from 'joi';
-import { validationMiddleware, securityMiddleware } from '../middlewares';
 import { Logger } from 'winston';
+import { CrudService } from '../services';
+import { Entity, Repository, UserRole } from '../models';
+import { validationMiddleware, securityMiddleware } from '../middlewares';
 
 function createDefaultRouter<T extends Entity>(repository: Repository<T>,
                                                logger: Logger,

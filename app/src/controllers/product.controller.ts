@@ -1,12 +1,11 @@
-import { createDefaultRouter } from '../factories';
 import { Product } from '../models';
-import { repositories } from '../repositories';
+import { productRepository } from '../repositories';
 import { projectSchema } from '../validation';
-import { createLogger } from '../utils';
+import { createLogger, createDefaultRouter } from '../common';
 
 const logger = createLogger('product-controller');
 
-const { router } = createDefaultRouter<Product>(repositories.product, logger, projectSchema);
+const { router } = createDefaultRouter<Product>(productRepository, logger, projectSchema);
 
 export {
     router

@@ -1,8 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import { routes } from './controllers';
-import { logMiddleware, joiErrorHandlerMiddleware } from './middlewares';
-import { alignedWithColorsAndTime } from './utils';
+import { logMiddleware, joiErrorHandlerMiddleware, alignedWithColorsAndTime } from './common';
 import expressWinston from 'express-winston';
 import winston from 'winston';
 

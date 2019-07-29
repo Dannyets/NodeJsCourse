@@ -1,0 +1,114 @@
+[
+  {
+    "id": {
+      "scope": null,
+      "name": "configutils"
+    },
+    "isSymlink": true,
+    "hash": "e8df193d4f6fe23b31ed20684e0ea6159d3afe33"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "generalutils"
+    },
+    "isSymlink": true,
+    "hash": "9b8a7cecc49ed48fff87a4f9109df35a561466fa"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "logutils"
+    },
+    "isSymlink": true,
+    "hash": "f439bf4aa78ea1778687771763b2785ae6cd7e6e"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "validationutils"
+    },
+    "isSymlink": true,
+    "hash": "7dea3e8ce638804e745cedeb8ffb6cf109b356b9"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "configutils"
+    },
+    "isSymlink": false,
+    "hash": "21b3275030c902f61d46a800256ec19a12764b0c"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "generalutils"
+    },
+    "isSymlink": false,
+    "hash": "a05a45641a15c574a62824891e35e4734f644bcc"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "logutils"
+    },
+    "isSymlink": false,
+    "hash": "9a759b6d2d949846ed34e798190e6df0c206f335"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "validationutils"
+    },
+    "isSymlink": false,
+    "hash": "a0ddcc177fdb8205ba5fefd51a677152f8980176"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "entity"
+    },
+    "isSymlink": true,
+    "hash": "e711631380ef1b422ae392db3ca08b8e061aea4e"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "repository"
+    },
+    "isSymlink": true,
+    "hash": "7d98ad90ac8076d2bda25ff05688ced394d0ca1b"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "user-role"
+    },
+    "isSymlink": true,
+    "hash": "04149dc1a6a468d72478890d2bfcb9a29bb0074b"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "entity"
+    },
+    "isSymlink": false,
+    "hash": "3c7eb946434f0752a606d78b5ac309d093d4adad"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "repository"
+    },
+    "isSymlink": false,
+    "hash": "2a2bfda1c947305ac1b23b160cf6e792d3c73fcb"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "user-role"
+    },
+    "isSymlink": false,
+    "hash": "9e0755fd46efa0c33d381f78bb0e496b51e4d9e9"
+  }
+]
