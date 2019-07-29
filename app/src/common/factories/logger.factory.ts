@@ -1,5 +1,5 @@
 import winston from 'winston';
-import { logUtils } from '@common/utils';
+import { logUtils } from '../utils';
 
 function createLogger(name: string) {
     const options = logUtils.createLoggerOptions(name);

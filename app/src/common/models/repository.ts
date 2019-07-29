@@ -1,4 +1,4 @@
-import { Entity } from '@common/models';
+import { Entity } from '.';
 
 export interface Repository<T extends Entity> {
     name: string;

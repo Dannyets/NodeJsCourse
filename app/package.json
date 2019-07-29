@@ -42,13 +42,7 @@
     "express-winston": "^3.2.1",
     "joi": "^14.3.1",
     "uuid": "^3.3.2",
-    "winston": "^3.2.1",
-    "@common/utils":"file:/src/common/utils/index",
-    "@common/models":"file:/src/common/models/index",
-    "@common/services":"file:/src/common/services/index",
-    "@common/factories":"file:/src/common/factories/index",
-    "@common/middlewares":"file:/src/common/middlewares/index",
-    "@common/clients":"file:/src/common/clients/index"
+    "winston": "^3.2.1"
   },
   "bit": {
     "env": {

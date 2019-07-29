@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { authClient } from '@common/clients';
-import { configUtils } from '@common/utils';
-import { ConfigKey } from '@common/models';
+import { authClient } from '../clients';
+import { configUtils } from '../utils';
+import { ConfigKey } from '../models';
 
 export const securityMiddleware = (accessibleForRoles: string[]) =>
                                   (req: Request, res: Response, next: NextFunction) => {

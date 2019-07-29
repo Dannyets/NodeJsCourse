@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { configUtils } from '@common/utils';
-import { ConfigKey } from '@common/models';
+import { configUtils } from '../utils';
+import { ConfigKey } from '../models';
 
 function isAuthenticated(accessibleForRoles: string[], authToken: string) {
     const reqConfig = {

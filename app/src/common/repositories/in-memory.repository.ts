@@ -1,7 +1,7 @@
 import uuid from 'uuid/v1';
 import fs from 'fs';
-import { Entity, Repository } from '@common/models';
-import { generalUtils } from '@common/utils';
+import { Entity, Repository } from '../models';
+import { generalUtils } from '../utils';
 
 export class InMemoryRepository<T extends Entity> implements Repository<T> {
     public name: string;
