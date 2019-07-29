@@ -98,14 +98,6 @@
   {
     "id": {
       "scope": "dannyets.infrastructure",
-      "name": "index"
-    },
-    "isSymlink": false,
-    "hash": "3fa44a42d18079188933820f5a90ba485bb8dd78"
-  },
-  {
-    "id": {
-      "scope": "dannyets.infrastructure",
       "name": "middlewares"
     },
     "isSymlink": false,
@@ -114,17 +106,25 @@
   {
     "id": {
       "scope": "dannyets.infrastructure",
-      "name": "repositories"
-    },
-    "isSymlink": false,
-    "hash": "a1cc57fe2ccd95f4994e90dca270e84ef47e70d6"
-  },
-  {
-    "id": {
-      "scope": "dannyets.infrastructure",
       "name": "utils"
     },
     "isSymlink": false,
     "hash": "a7836b14c253b864656a9245fc43c70879e3dcc0"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "index"
+    },
+    "isSymlink": false,
+    "hash": "3fa44a42d18079188933820f5a90ba485bb8dd78"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "repositories"
+    },
+    "isSymlink": false,
+    "hash": "a1cc57fe2ccd95f4994e90dca270e84ef47e70d6"
   }
 ]
