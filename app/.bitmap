@@ -32,6 +32,11 @@
                 "name": "index.ts"
             },
             {
+                "relativePath": "src/common/factories/logger.factory.ts",
+                "test": false,
+                "name": "logger.factory.ts"
+            },
+            {
                 "relativePath": "src/common/factories/repository.factory.ts",
                 "test": false,
                 "name": "repository.factory.ts"
