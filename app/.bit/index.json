@@ -10,22 +10,6 @@
   {
     "id": {
       "scope": null,
-      "name": "factories"
-    },
-    "isSymlink": true,
-    "hash": "224d5bff6b9f8d8ea999587f5a691f38377cb861"
-  },
-  {
-    "id": {
-      "scope": null,
-      "name": "index"
-    },
-    "isSymlink": true,
-    "hash": "e540cdd1328b2b21e29a95405c301b9313b7c346"
-  },
-  {
-    "id": {
-      "scope": null,
       "name": "middlewares"
     },
     "isSymlink": true,
@@ -154,26 +138,10 @@
   {
     "id": {
       "scope": "dannyets.infrastructure",
-      "name": "factories"
-    },
-    "isSymlink": false,
-    "hash": "47ac54094b5f5216b888890fd94202f8dc145116"
-  },
-  {
-    "id": {
-      "scope": "dannyets.infrastructure",
       "name": "middlewares"
     },
     "isSymlink": false,
     "hash": "2f41a0cb949fc35b95db34f0a7b4e69e00929398"
-  },
-  {
-    "id": {
-      "scope": "dannyets.infrastructure",
-      "name": "index"
-    },
-    "isSymlink": false,
-    "hash": "3fa44a42d18079188933820f5a90ba485bb8dd78"
   },
   {
     "id": {

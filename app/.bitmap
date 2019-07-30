@@ -19,51 +19,6 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "dannyets.infrastructure/factories@1.1.1": {
-        "files": [
-            {
-                "relativePath": "src/common/factories/class.factory.ts",
-                "test": false,
-                "name": "class.factory.ts"
-            },
-            {
-                "relativePath": "src/common/factories/index.ts",
-                "test": false,
-                "name": "index.ts"
-            },
-            {
-                "relativePath": "src/common/factories/logger.factory.ts",
-                "test": false,
-                "name": "logger.factory.ts"
-            },
-            {
-                "relativePath": "src/common/factories/repository.factory.ts",
-                "test": false,
-                "name": "repository.factory.ts"
-            },
-            {
-                "relativePath": "src/common/factories/router.factory.ts",
-                "test": false,
-                "name": "router.factory.ts"
-            }
-        ],
-        "mainFile": "src/common/factories/index.ts",
-        "trackDir": "src/common/factories",
-        "origin": "AUTHORED",
-        "exported": true
-    },
-    "dannyets.infrastructure/index@1.1.1": {
-        "files": [
-            {
-                "relativePath": "src/common/index.ts",
-                "test": false,
-                "name": "index.ts"
-            }
-        ],
-        "mainFile": "src/common/index.ts",
-        "origin": "AUTHORED",
-        "exported": true
-    },
     "dannyets.infrastructure/middlewares@1.1.1": {
         "files": [
             {
