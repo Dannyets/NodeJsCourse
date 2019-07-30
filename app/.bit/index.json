@@ -1,11 +1,51 @@
 [
   {
     "id": {
+      "scope": "bit.envs",
+      "name": "compilers/typescript"
+    },
+    "isSymlink": false,
+    "hash": "befd9e3f4fa0c82a53857ef8bdea434291b1ac27"
+  },
+  {
+    "id": {
+      "scope": "bit.envs",
+      "name": "internal/typescript-base-compiler"
+    },
+    "isSymlink": false,
+    "hash": "25c34dd9324192d4c48ac4434881acb7662f9d72"
+  },
+  {
+    "id": {
+      "scope": "bit.utils",
+      "name": "object/has-own-property"
+    },
+    "isSymlink": false,
+    "hash": "68b489f0ac79f13787c77dc1fd6a7beb18a7b6ba"
+  },
+  {
+    "id": {
+      "scope": "bit.utils",
+      "name": "object/group-by"
+    },
+    "isSymlink": false,
+    "hash": "9155f60c15a0d4c1c0301f15ef2a09a99687ca77"
+  },
+  {
+    "id": {
       "scope": null,
       "name": "clients"
     },
     "isSymlink": true,
     "hash": "93df14617ceda8ee499003ae137b44e91aa26cce"
+  },
+  {
+    "id": {
+      "scope": null,
+      "name": "factories"
+    },
+    "isSymlink": true,
+    "hash": "224d5bff6b9f8d8ea999587f5a691f38377cb861"
   },
   {
     "id": {
@@ -49,59 +89,27 @@
   },
   {
     "id": {
-      "scope": "bit.envs",
-      "name": "compilers/babel"
+      "scope": "dannyets.infrastructure",
+      "name": "clients"
     },
     "isSymlink": false,
-    "hash": "ac130f5e67d6ac0482ae46fde1a4805ef4d8c149"
+    "hash": "fe1d97f01afd8433f5695c70bf5c4a752304ef2f"
   },
   {
     "id": {
-      "scope": "bit.envs",
-      "name": "internal/get-babel-options"
+      "scope": "dannyets.infrastructure",
+      "name": "factories"
     },
     "isSymlink": false,
-    "hash": "d4771e232e52a7a9ef391bf363d523bc932b014d"
+    "hash": "47ac54094b5f5216b888890fd94202f8dc145116"
   },
   {
     "id": {
-      "scope": "bit.envs",
-      "name": "internal/babel-base-compiler"
+      "scope": "dannyets.infrastructure",
+      "name": "middlewares"
     },
     "isSymlink": false,
-    "hash": "98f497a5e1cba818d2d5da02020ed566a572b936"
-  },
-  {
-    "id": {
-      "scope": "bit.utils",
-      "name": "object/has-own-property"
-    },
-    "isSymlink": false,
-    "hash": "68b489f0ac79f13787c77dc1fd6a7beb18a7b6ba"
-  },
-  {
-    "id": {
-      "scope": "bit.utils",
-      "name": "object/group-by"
-    },
-    "isSymlink": false,
-    "hash": "9155f60c15a0d4c1c0301f15ef2a09a99687ca77"
-  },
-  {
-    "id": {
-      "scope": "bit.envs",
-      "name": "compilers/typescript"
-    },
-    "isSymlink": false,
-    "hash": "befd9e3f4fa0c82a53857ef8bdea434291b1ac27"
-  },
-  {
-    "id": {
-      "scope": "bit.envs",
-      "name": "internal/typescript-base-compiler"
-    },
-    "isSymlink": false,
-    "hash": "25c34dd9324192d4c48ac4434881acb7662f9d72"
+    "hash": "2f41a0cb949fc35b95db34f0a7b4e69e00929398"
   },
   {
     "id": {
@@ -110,6 +118,14 @@
     },
     "isSymlink": false,
     "hash": "bdfc55df7ccdc842605f6d72b29ee44b3f225e2f"
+  },
+  {
+    "id": {
+      "scope": "dannyets.infrastructure",
+      "name": "repositories"
+    },
+    "isSymlink": false,
+    "hash": "a1cc57fe2ccd95f4994e90dca270e84ef47e70d6"
   },
   {
     "id": {
@@ -126,29 +142,5 @@
     },
     "isSymlink": false,
     "hash": "a7836b14c253b864656a9245fc43c70879e3dcc0"
-  },
-  {
-    "id": {
-      "scope": "dannyets.infrastructure",
-      "name": "clients"
-    },
-    "isSymlink": false,
-    "hash": "fe1d97f01afd8433f5695c70bf5c4a752304ef2f"
-  },
-  {
-    "id": {
-      "scope": "dannyets.infrastructure",
-      "name": "middlewares"
-    },
-    "isSymlink": false,
-    "hash": "2f41a0cb949fc35b95db34f0a7b4e69e00929398"
-  },
-  {
-    "id": {
-      "scope": "dannyets.infrastructure",
-      "name": "repositories"
-    },
-    "isSymlink": false,
-    "hash": "a1cc57fe2ccd95f4994e90dca270e84ef47e70d6"
   }
 ]

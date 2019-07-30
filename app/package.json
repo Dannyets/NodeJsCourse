@@ -6,7 +6,7 @@
   "scripts": {
     "build:run": "tsc",
     "build:clean": "rimraf dist",
-    "build": "npm run build && npm run build:run",
+    "build": "npm run build:clean && npm run build:run",
     "serve": "node dist/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:ts": "./node_modules/.bin/tslint--project . --format codeFrame",
