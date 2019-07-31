@@ -1,2 +1,2 @@
-export * from './product.repository';
-export * from './category.repository';
+export * from './song.repository';
+export * from './artist.repository';

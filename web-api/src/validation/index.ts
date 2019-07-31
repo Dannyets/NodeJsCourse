@@ -1,2 +1,2 @@
-export * from './category-schema';
-export * from './project-schema';
+export * from './artist-schema';
+export * from './song-schema';

@@ -1,5 +1,6 @@
 import { Entity } from '@common/models';
 
-export interface Category extends Entity {
+export interface Song extends Entity {
+    artistId: string;
     name: string;
 }
