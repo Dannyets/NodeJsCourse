@@ -4,7 +4,7 @@ import { Route } from '@common/models';
 
 const routes: Route[] = [
     {
-        route: '/api/product',
+        route: '/api/song',
         router: productRouter,
     },
     {

@@ -6,6 +6,8 @@ services:
     build: ./web-app
     ports:
       - "4201:4200"
+    environment:
+        - WEB_API_BASE_URL=http://localhost:3001
 
   auth:
     image: auth-service

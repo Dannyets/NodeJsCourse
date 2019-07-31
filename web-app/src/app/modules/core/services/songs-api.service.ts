@@ -1,26 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, catchError } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { Song } from '../models/song';
-import { Observable } from 'rxjs';
 
 @Injectable()
 export class SongsApiService {
-  private readonly baseApiUrl = './assets/';
+  private readonly baseApiUrl = `${process.env.WEB_API_BASE_URL}/api/song`;
   private readonly errorMessage = 'An error has occurred';
 
   constructor(private http: HttpClient) { }
 
-  // getSongs(): Observable<Song[]> {
-  //   return this.http.get(this.apiUrl('projects.json'))
-  //     .pipe(
-  //       map(json => this.prepareSongs(json as Song[])),
-  //       catchError(error => Observable.throw(this.errorMessage))
-  //     );
-  // }
-
   getSongs(): Promise<Song[]> {
-    return this.http.get(this.apiUrl('songs.json'))
+    const url = this.apiUrl('');
+
+    return this.http.get(url)
         .pipe(
             map(json => this.prepareSongs(json as Song[])),
         )
@@ -33,6 +26,6 @@ export class SongsApiService {
   }
 
   private apiUrl(action: string) {
-    return `${this.baseApiUrl}${action}`;
+    return `${this.baseApiUrl}/${action}`;
   }
 }
