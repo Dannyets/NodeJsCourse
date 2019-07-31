@@ -38,6 +38,12 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
+    "@bit/dannyets.infrastructure.clients": "^1.0.0",
+    "@bit/dannyets.infrastructure.factories": "^1.0.0",
+    "@bit/dannyets.infrastructure.models": "^1.0.0",
+    "@bit/dannyets.infrastructure.repositories": "^1.0.0",
+    "@bit/dannyets.infrastructure.services": "^1.0.0",
+    "@bit/dannyets.infrastructure.utils": "^1.0.0",
     "@types/uuid": "^3.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
@@ -47,11 +53,7 @@
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "winston": "^3.2.1",
-    "@bit/dannyets.infrastructure.repositories": "file:./components/repositories",
-    "@bit/dannyets.infrastructure.utils": "file:./components/utils",
-    "@bit/dannyets.infrastructure.models": "file:./components/models",
-    "@bit/dannyets.infrastructure.factories": "file:./components/factories"
+    "winston": "^3.2.1"
   },
   "bit": {
     "env": {},

@@ -1,2 +1,2 @@
 export * from './passport.utils';
-export * from './authorization.utils';
+export * from './auth.utils';

@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  auth:
+    image: auth-service
+    build: ./auth-service
+    ports:
+      - "3000:8080"
+    environment:
+      - JWT_SIGN_SECRET=my_secret
+
+  app:
+    image: tab-lab-web-api
+    build: ./app
+    ports:
+      - "3001:8080"
+    environment: 
+      - AUTH=true
+      - AUTH_CLIENT_BASE_URL=http://auth:8080
+
+  mongo:
+    image: mongo
+    volumes:
+      - data:/data/db
+    ports: 
+      - "27017:27017"
+
+volumes:
+  data:

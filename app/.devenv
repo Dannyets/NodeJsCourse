@@ -1,0 +1,3 @@
+SERVER_PORT=3001
+AUTH=false
+AUTH_CLIENT_BASE_URL=http://localhost:3000

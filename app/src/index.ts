@@ -4,21 +4,17 @@ dotenv.config();
 
 import { app } from './app';
 
-import { ConfigKey } from '@common/models';
-import { configUtils } from '@common/utils';
+const host = '0.0.0.0';
+const port = '8080';
 
-app.set('port', configUtils.get<number>(ConfigKey.ServerPort));
-
-const port = app.get('port');
+app.set('port', port);
 
 const server = app.listen(port, () => {
-    console.log(
-        'App is running at http://localhost:%d in %s mode',
-        app.get('port'),
-        app.get('env')
-    );
-    
-    console.log('Press CTRL + C to exit.')
+    const env = app.get('env');
+
+    console.log(`App is running at http://${host}:${port} in ${env} mode`);
+
+    console.log('Press CTRL + C to exit.');
 });
 
 export {

@@ -18,7 +18,7 @@
                 "node_modules/*",
                 "src/types/*",
             ],
-            "@components/*": ["components/*"]
+            "@components/*": ["node_modules/@bit/dannyets.infrastructure.*"]
         },
         "resolveJsonModule": true,
         "sourceMap": true,
