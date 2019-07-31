@@ -1,0 +1,7 @@
+<div #container (mouseenter)="inView = true" (mouseleave)="inView = isInView() || false">
+    <ng-content select=[title]></ng-content>
+    <div [@openClose]="inView ? 'open' : 'closed'">
+      <ng-content select=[body]></ng-content>
+    </div>
+  </div>
+  

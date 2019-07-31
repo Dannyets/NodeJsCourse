@@ -1,6 +1,12 @@
 version: '3'
 
 services:
+  web-app:
+    image: tab-lab-web-app
+    build: ./web-app
+    ports:
+      - "4201:4200"
+
   auth:
     image: auth-service
     build: ./auth-service
@@ -8,15 +14,18 @@ services:
       - "3000:8080"
     environment:
       - JWT_SIGN_SECRET=my_secret
+      - DATABASE_CONNECTION_STRING=mongodb://mongo:27017
 
-  app:
+
+  web-api:
     image: tab-lab-web-api
-    build: ./app
+    build: ./web-api
     ports:
       - "3001:8080"
     environment: 
       - AUTH=true
       - AUTH_CLIENT_BASE_URL=http://auth:8080
+      - DATABASE_CONNECTION_STRING=mongodb://mongo:27017
 
   mongo:
     image: mongo

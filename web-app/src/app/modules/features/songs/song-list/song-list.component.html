@@ -1,0 +1,7 @@
+<div>
+  <ul>
+    <li *ngFor="let s of songs | async">
+      <app-song-item [song]="s"></app-song-item>
+    </li>
+  </ul>
+</div>

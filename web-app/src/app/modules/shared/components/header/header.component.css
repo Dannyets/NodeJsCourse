@@ -1,0 +1,32 @@
+:host {
+    display: block;
+    padding: 12px;
+    border-radius: 2px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    justify-content: start;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+ul * {
+    margin: 0 var(--margin);
+}
+
+a {
+    cursor: pointer;
+}
+
+a:hover {
+}
+
+.active {
+    background-color: rgba(249, 249, 249, 0.53);
+    padding: var(--padding);
+}

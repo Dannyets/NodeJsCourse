@@ -1,0 +1,11 @@
+:host {
+    display: block;
+    margin: var(--margin);
+    padding: var(--padding);
+    background-color: var(--background-color);
+    border: var(--border);
+}
+
+:host:hover {
+    background-color: var(--hover-color);
+}
