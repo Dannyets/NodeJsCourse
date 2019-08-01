@@ -18,6 +18,8 @@ export class LambdaService {
     }
 
     private trigger = async (lambdaParams: LambdaParams) => {
+        console.log(`Triggering lambda ${lambdaParams.functionName} with payload: ${lambdaParams.payload}`)
+
         return await this.lambdaClient.trigger(lambdaParams);
     }
 

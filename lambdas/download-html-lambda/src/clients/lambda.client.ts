@@ -19,9 +19,10 @@ export class LambdaClient {
             Payload: stringPayload
          };
           
-
-        const response = await this.lambda.invoke(invokeParams).promise();
-
-        return response;
+        try {
+            return await this.lambda.invoke(invokeParams).promise();
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
