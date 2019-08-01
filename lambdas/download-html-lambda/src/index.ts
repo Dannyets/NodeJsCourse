@@ -41,7 +41,7 @@ handler({
         url: 'https://www.tab4u.com/tabs/songs/3_Christina_Aguilera_-_Your_Body.html'
     },
     target: {
-        name: 'song',
+        name: 'tab-lab-raw-songs',
         source: TargetSource.S3,
     }
 });

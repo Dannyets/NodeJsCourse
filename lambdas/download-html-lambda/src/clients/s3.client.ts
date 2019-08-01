@@ -11,7 +11,7 @@ export class S3Client implements UploadClient {
     uploadFile = async (file: File) => {
         const uploadParams = {
             Bucket: file.metadata.target.name,
-            Key: file.metadata.id,
+            Key: `${file.metadata.source.domain}/${file.metadata.id}`,
             Body: file.content
         };
 
