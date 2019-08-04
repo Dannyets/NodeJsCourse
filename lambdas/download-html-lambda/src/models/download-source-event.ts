@@ -1,5 +1,4 @@
-import { Source } from "./source";
-import { Target } from './target';
+import { Source, Target } from "@infra/models";
 
 export interface DownloadSourceEvent {
     source: Source;

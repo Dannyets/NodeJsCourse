@@ -1,1 +1,0 @@
-export { default as configurationUtils } from './configuration.utils';

@@ -1,5 +1,5 @@
 {
-  "name": "download-html-lambda",
+  "name": "tab4u-song-page-crawler-lambda",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
@@ -12,16 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "aws-sdk": "^2.503.0",
-    "axios": "^0.19.0",
-    "js.infrastructure": "^1.2.0",
-    "jsdom": "^15.1.1",
+    "js.infrastructure": "^1.2.4",
     "nodemon": "^1.19.1"
   },
   "devDependencies": {
-    "@types/express": "^4.17.0",
-    "@types/joi": "^14.3.3",
-    "@types/mongodb": "^3.1.31",
     "ts-node": "^8.3.0",
     "tsconfig-paths": "^3.8.0",
     "typescript": "^3.5.3"

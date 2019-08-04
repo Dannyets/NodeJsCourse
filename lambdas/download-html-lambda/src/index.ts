@@ -1,10 +1,11 @@
 import axios from 'axios';
 
-import { DownloadSourceEvent, File, Domain, SourceType, TargetSource } from "./models";
-import { clientFactory, serviceFactory } from './factories';
-import { configurationUtils } from './utils';
+import { DownloadSourceEvent } from './models';
+import { File, Domain, SourceType, TargetSource } from "@infra/models";
+import { clientFactory, serviceFactory } from '@infra/factories';
+import { configUtils } from '@infra/utils';
 
-configurationUtils.configureAws();
+configUtils.configureAws();
 
 export const handler = async (downloadHtmlEvent: DownloadSourceEvent): Promise<any> => {
     const { source, target } = downloadHtmlEvent;
@@ -15,6 +16,15 @@ export const handler = async (downloadHtmlEvent: DownloadSourceEvent): Promise<a
     const { data: html } = response;
     
     console.log(`Source content: ${html.slice(0, 100)}`);
+
+    //Move to tab4u page crawler
+    const htmlParser = serviceFactory.createHtmlParserService();
+    const htmlDoc = htmlParser.getDocument(html);
+    const elements = htmlParser.getValues<string>(htmlDoc, 
+                                                  'a[href^="/tabs/songs/"', 
+                                                  e => e.getAttribute('href') || '');
+    
+    console.log(elements);
 
     const file = new File(source, target, html);
 
@@ -30,8 +40,6 @@ export const handler = async (downloadHtmlEvent: DownloadSourceEvent): Promise<a
     await lambdaService.crawl(file);
 
     await lambdaService.extractData(file);
-
-    return html;
 };
 
 handler({
